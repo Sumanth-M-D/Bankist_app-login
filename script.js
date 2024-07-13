@@ -229,7 +229,7 @@ function formatMovementDate(date, locale) {
     Math.round(Math.abs((date2 - date1) / (24 * 60 * 60 * 1000)));
 
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed);
+
   if (daysPassed === 0) return 'today';
   if (daysPassed === 1) return 'yesterday';
   if (daysPassed <= 7) return `${daysPassed} days ago`;
@@ -290,8 +290,7 @@ function startLogoutTimer() {
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 // 1. Creating the userNames for the accounts
-createUserNames(accounts);
-console.log(accounts);
+
 //Fake always login
 // updateUI(account1);
 // containerApp.style.opacity= 100;
@@ -409,7 +408,6 @@ btnLoan.addEventListener('click', function (event) {
 //5. close Account event handler
 btnClose.addEventListener('click', function (event) {
   event.preventDefault();
-  console.log('delete');
 
   if (
     Number(inputClosePin.value) === currentAccount.pin &&
@@ -418,13 +416,12 @@ btnClose.addEventListener('click', function (event) {
     const index = accounts.findIndex(
       account => account.userName === currentAccount.userName
     );
-    console.log(index);
+
     //delete account
     accounts.splice(index, 1);
 
     //hide UI
     containerApp.style.opacity = 0;
-    console.log(accounts);
   }
 });
 
