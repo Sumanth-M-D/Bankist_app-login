@@ -116,7 +116,6 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 //1. Function for Creating userNames
 function createUserNames(accounts) {
-  let userNames = [];
   accounts.forEach(account => {
     account.userName = account.owner
       .toLowerCase()
@@ -125,6 +124,7 @@ function createUserNames(accounts) {
       .join('');
   });
 }
+createUserNames(accounts);
 
 //2. Function for Displaying movements
 function displayMovements(account, sort = false) {
